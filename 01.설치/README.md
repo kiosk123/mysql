@@ -24,3 +24,20 @@ $ mysql_secure_installation # 설치시 my
 
 $ mysql -h localhost -u root -p # mysql 실행 -h는 접속할 주소 -u는 사용자명 -p는 패스워드
 ```
+
+### CentOS - [(CentOS7기준)](https://www.mysqltutorial.org/install-mysql-centos/)
+CentOS8이상일 경우 다음 몇가지 단계는 건너 띨 수 있음 - [참고](https://info-lab.tistory.com/172)  
+여기서는 MySQL 8버전을 설치
+```bash
+$ sudo rpm -Uvh https://repo.mysql.com/mysql80-community-release-el7-3.noarch.rpm
+$ sudo sed -i 's/enabled=1/enabled=0/' /etc/yum.repos.d/mysql-community.repo
+$ sudo yum --enablerepo=mysql80-community install mysql-community-server
+
+$ sudo systemctl start mysqld
+$ sudo systemctl enable mysqld
+
+$ sudo grep "A temporary password" /var/log/mysqld.log # 디폴트 패스워드 확인
+[Note] A temporary password is generated for root@localhost: hjkygMukj5+t783
+
+$ mysql_secure_installation
+```
