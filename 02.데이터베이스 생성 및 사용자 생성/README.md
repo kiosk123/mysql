@@ -4,6 +4,10 @@
 create schema [데이터베이스명]
 
 create schema mydb;
+
+-- 생성된 데이터 베이스 확인
+show databases;
+
 use mydb; -- 생성한 mydb 사용
 ```
 
@@ -22,7 +26,7 @@ grant all privileges on 데이터베이스명.* to '아이디'@'localhost' ident
 grant select,insert,update,delete,create,drop,alter on 데이터베이스명.* to '아이디'@'%'identified by '비번';
 
 -- 위와 동일
-grant all privileges on 데이터베이스명.* to '아이디'@'%'identified by '비번' with grant option;;
+grant all privileges on 데이터베이스명.* to '아이디'@'%'identified by '비번' with grant option;
 ```
 
 위 방식으로 안되면 다음 방식으로 처리 - [참고](https://ma.ttias.be/mysql-8-removes-shorthand-creating-user-permissions/)
@@ -57,3 +61,5 @@ SET GLOBAL validate_password.length = 6;
 SET GLOBAL validate_password.number_count = 0;
 SET GLOBAL validate_password.policy=LOW
 ```
+
+### 
