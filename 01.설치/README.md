@@ -36,8 +36,14 @@ $ sudo yum --enablerepo=mysql80-community install mysql-community-server
 $ sudo systemctl start mysqld
 $ sudo systemctl enable mysqld
 
-$ sudo grep "A temporary password" /var/log/mysqld.log # 디폴트 패스워드 확인
+$ sudo grep "A temporary password" /var/log/mysqld.log # 임시 패스워드 확인
 [Note] A temporary password is generated for root@localhost: hjkygMukj5+t783
 
 $ mysql_secure_installation
+Securing the MySQL server deployment.
+
+Enter password for user root:  # 위에서 출력된 임시 패스워드 입력 후 메시지 보면서 상황에 맞게 y/n 입력
+
+$ mysql -u root -p # root 계정으로 로그인 후 사용자 생성 등 처리
+Enter password:
 ```
