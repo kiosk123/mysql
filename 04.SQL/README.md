@@ -26,5 +26,5 @@ INSERT INTO 대상 테이블(필드목록) SELECT 필드목록 FROM 원본 테�
 - 생략된 필드는 NULL을 허용하거나 기본값을 가지고 있어야함
 
 ```sql
-insert into tstaff(name, depart, gender, joindate, grade, salary, score) select name, region, metro, '2020-06-29', '신입', area, popu from tcity where region = '경기'
+insert into tstaff(name, depart, gender, joindate, grade, salary, score) select name, region, metro, '2020-06-29', '신입', area, popu from tcity where region = '경기';
 ```
