@@ -48,3 +48,6 @@ create table tsudo (
     constraint pk_tsudo primary key(name)
 ) as select name, area, popu from tcity where region = '경기';
 ```
+
+## 자동 생성 시퀀스
+
