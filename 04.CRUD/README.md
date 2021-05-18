@@ -49,5 +49,13 @@ create table tsudo (
 ) as select name, area, popu from tcity where region = '경기';
 ```
 
-## 자동 생성 시퀀스
+## 자동 증가 일련번호 - AUTO_INCREMENT
 
+AUTO_INCREMENT를 설정한 필드는 데이터가 추가 될 시 1부터 1씩 값이 증가된다.
+```sql
+create table tsale (
+	saleno int auto_increment primary key,
+    customer nchar(10),
+    product nchar(30)
+);
+```
