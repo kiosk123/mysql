@@ -1,7 +1,7 @@
 # 05. 제약조건
 
 ## 기본키 제약조건
-레코드끼리 구분할 수 있는 고유키(식별자) 컬럼을 설정한다.
+레코드끼리 구분할 수 있는 고유키(식별자)를 필드에 설정.
 
 ```sql
 create table tprimarytest (
@@ -27,6 +27,24 @@ create table tprimarytest (
 	id bigint,
     name char(10),
     constraint pk_tprimarytest primary key(id, name)
+);
+```
+
+## 유니크 제약조건
+필드의 중복값을 방지하여 필드가 고유한 값을 가지도록 제약함
+```sql
+create table tprimarytest (
+	id bigint,
+    name char(10),
+    constraint uk_tprimarytest unique(name)
+);
+
+-- 복합 유니크 제약조건 설정
+create table tprimarytest (
+	id bigint,
+    name char(10),
+    age int,
+    constraint uk_tprimarytest unique(name, age)
 );
 ```
 
